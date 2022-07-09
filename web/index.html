@@ -38,6 +38,25 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+
+  <!-- Firebase Configuration -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: 'AIzaSyAraz5MMnbfXZjnLZZYKdtSeFnXkpCimMA',
+      authDomain: 'flutter-template-firabase.firebaseapp.com',
+      databaseURL: "https://flutter-template-firabase.firebaseio.com",
+      projectId: "flutter-template-firabase",
+      storageBucket: "flutter-template-firabase.appspot.com",
+      messagingSenderId: '452851796801',
+      appId: '1:452851796801:web:08430ecafc0f86653defc0',
+      measurementId: 'G-3W9DW2KL0F',
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </head>
 <body>
   <script>
@@ -54,5 +73,7 @@
       });
     });
   </script>
+
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
