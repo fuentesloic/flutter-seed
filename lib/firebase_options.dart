@@ -47,9 +47,9 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyAraz5MMnbfXZjnLZZYKdtSeFnXkpCimMA',
     appId: '1:452851796801:web:08430ecafc0f86653defc0',
     messagingSenderId: '452851796801',
-    projectId: 'flutter-template-firabase',
-    authDomain: 'flutter-template-firabase.firebaseapp.com',
-    storageBucket: 'flutter-template-firabase.appspot.com',
+    projectId: 'flutter-template-firebase',
+    authDomain: 'flutter-template-firebase.firebaseapp.com',
+    storageBucket: 'flutter-template-firebase.appspot.com',
     measurementId: 'G-3W9DW2KL0F',
   );
 
@@ -57,17 +57,18 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCHMUvhU0U_T6wj_sFadyF9eYlMviiootE',
     appId: '1:452851796801:android:ab3d165d33268d5c3defc0',
     messagingSenderId: '452851796801',
-    projectId: 'flutter-template-firabase',
-    storageBucket: 'flutter-template-firabase.appspot.com',
+    projectId: 'flutter-template-firebase',
+    storageBucket: 'flutter-template-firebase.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCCHXNHBjfUoLrVbIe6KxD9Pszm9gm9ALg',
     appId: '1:452851796801:ios:e918953448c9acec3defc0',
     messagingSenderId: '452851796801',
-    projectId: 'flutter-template-firabase',
-    storageBucket: 'flutter-template-firabase.appspot.com',
-    iosClientId: '452851796801-cdobgr05im8rg3lf0j4ed55gi6pu0q90.apps.googleusercontent.com',
+    projectId: 'flutter-template-firebase',
+    storageBucket: 'flutter-template-firebase.appspot.com',
+    iosClientId:
+        '452851796801-cdobgr05im8rg3lf0j4ed55gi6pu0q90.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterSeed',
   );
 
@@ -75,9 +76,10 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCCHXNHBjfUoLrVbIe6KxD9Pszm9gm9ALg',
     appId: '1:452851796801:ios:e918953448c9acec3defc0',
     messagingSenderId: '452851796801',
-    projectId: 'flutter-template-firabase',
-    storageBucket: 'flutter-template-firabase.appspot.com',
-    iosClientId: '452851796801-cdobgr05im8rg3lf0j4ed55gi6pu0q90.apps.googleusercontent.com',
+    projectId: 'flutter-template-firebase',
+    storageBucket: 'flutter-template-firebase.appspot.com',
+    iosClientId:
+        '452851796801-cdobgr05im8rg3lf0j4ed55gi6pu0q90.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterSeed',
   );
 }

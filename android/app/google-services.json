@@ -1,8 +1,8 @@
 {
   "project_info": {
     "project_number": "452851796801",
-    "project_id": "flutter-template-firabase",
-    "storage_bucket": "flutter-template-firabase.appspot.com"
+    "project_id": "flutter-template-firebase",
+    "storage_bucket": "flutter-template-firebase.appspot.com"
   },
   "client": [
     {
