@@ -1,2 +1,9 @@
 # flutter-seed
-Flutter - Seed
+
+## Install Dart/flutter
+
+## Install Firebase suite
+
+- Firebase suite
+- Firebase crashlytics (excluding web/desktop)
+- Firebase performance (excluding web/desktop)

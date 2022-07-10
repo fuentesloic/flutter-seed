@@ -4,3 +4,5 @@ firebase_auth_web=/Users/loic/Libs/flutter/.pub-cache/hosted/pub.dartlang.org/fi
 firebase_core=/Users/loic/Libs/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.19.1/
 firebase_core_web=/Users/loic/Libs/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.6/
 firebase_crashlytics=/Users/loic/Libs/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_crashlytics-2.8.4/
+firebase_performance=/Users/loic/Libs/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_performance-0.8.1+1/
+firebase_performance_web=/Users/loic/Libs/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_performance_web-0.1.0+16/

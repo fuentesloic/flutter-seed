@@ -40,42 +40,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:452851796801:android:83ec5ba2925ec2883defc0",
-        "android_client_info": {
-          "package_name": "com.example.template"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "452851796801-funrsd0bs6nivju0cicadsd6otvt3sdq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCHMUvhU0U_T6wj_sFadyF9eYlMviiootE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "452851796801-funrsd0bs6nivju0cicadsd6otvt3sdq.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "452851796801-cdobgr05im8rg3lf0j4ed55gi6pu0q90.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.flutterSeed"
-              }
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"
