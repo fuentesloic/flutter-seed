@@ -5,38 +5,31 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_seed/crashlytics_utils.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'firebase_options.dart';
 
 void main() async {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
+
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
 
-    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-
-    Isolate.current.addErrorListener(RawReceivePort((pair) async {
-      final List<dynamic> errorAndStacktrace = pair;
-      await FirebaseCrashlytics.instance.recordError(
-        errorAndStacktrace.first,
-        errorAndStacktrace.last,
-      );
-    }).sendPort);
-
     if (!kIsWeb) {
-      if (kDebugMode) {
-        // Force disable Crashlytics collection while doing every day development.
-        // Temporarily toggle this to true if you want to test crash reporting in your app.
-        await FirebaseCrashlytics.instance
-            .setCrashlyticsCollectionEnabled(false);
-      } else {
-        // Handle Crashlytics enabled status when not in Debug,
-        // e.g. allow your users to opt-in to crash reporting.
-        await FirebaseCrashlytics.instance
-            .setCrashlyticsCollectionEnabled(true);
-      }
+      FlutterError.onError =
+          FirebaseCrashlytics.instance.recordFlutterFatalError;
+
+      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+
+      Isolate.current.addErrorListener(RawReceivePort((pair) async {
+        final List<dynamic> errorAndStacktrace = pair;
+        await FirebaseCrashlytics.instance.recordError(
+          errorAndStacktrace.first,
+          errorAndStacktrace.last,
+        );
+      }).sendPort);
     }
 
     initializeDateFormatting().then((_) => runApp(const MyApp()));
@@ -79,19 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Text("Test crashlytics, only for mobile"),
             TextButton(
-              onPressed: () {
-                const version = '0.0.0';
-                const userId = '1a2b3c5d5e';
-
-                FirebaseCrashlytics.instance.setCustomKey('version', version);
-                FirebaseCrashlytics.instance.setUserIdentifier(userId);
-
-                FirebaseCrashlytics.instance.log('version faillure: $version');
-
-                throw Exception('Crashlytics is bind with tags');
-              },
-              child: const Text('Test crashlytics'),
+              onPressed: () => reportCrashlyticsError(),
+              child: const Text('Throw error'),
             ),
           ],
         ),
