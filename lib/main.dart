@@ -1,8 +1,5 @@
 import 'dart:async';
-import 'dart:isolate';
 
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_seed/crashlytics_utils.dart';
@@ -11,32 +8,21 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
 
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      await initCrashlyticsError();
 
-    if (!kIsWeb) {
-      FlutterError.onError =
-          FirebaseCrashlytics.instance.recordFlutterFatalError;
-
-      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-
-      Isolate.current.addErrorListener(RawReceivePort((pair) async {
-        final List<dynamic> errorAndStacktrace = pair;
-        await FirebaseCrashlytics.instance.recordError(
-          errorAndStacktrace.first,
-          errorAndStacktrace.last,
-        );
-      }).sendPort);
-    }
-
-    initializeDateFormatting().then((_) => runApp(const MyApp()));
-  }, (Object error, StackTrace stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-  });
+      initializeDateFormatting().then(
+        (_) => runApp(const MyApp()),
+      );
+    },
+    (Object error, StackTrace stack) => bindCrashlyticsError(error, stack),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -73,23 +59,24 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // CRASHLYTICS
             const Text(
-                "Test crashlytics, raise issue pressing the button. Only for mobile"),
+              "Test crashlytics, raise issue pressing the button. Only for mobile",
+            ),
             ElevatedButton(
               child: const Text('Throw error'),
               onPressed: () => reportCrashlyticsError(),
             ),
-            // FIREBASE - PERFORMANCE
             const Text(
-                "Test performance, try to navigate repititvly. Only for mobile"),
+              "Test performance, try to navigate repititvly. Only for mobile",
+            ),
             ElevatedButton(
               child: const Text('Navigate'),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const PerformanceRoute()),
+                    builder: (context) => const PerformanceRoute(),
+                  ),
                 );
               },
             ),

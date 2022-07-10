@@ -60,21 +60,19 @@
   <body>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // https://firebase.google.com/docs/web/setup#available-libraries
         // Active firebase product for web 
-        //
+        firebase.analytics();
+        firebase.performance();
+        // Inactive firebase product for web 
         // firebase.auth().onAuthStateChanged(user => { });
         // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
         // firebase.firestore().doc('/foo/bar').get().then(() => { });
         // firebase.functions().httpsCallable('yourFunction')().then(() => { });
         // firebase.messaging().requestPermission().then(() => { });
         // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics();
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance();
 
         try {
-          // TODO: Add SDKs for Firebase products that you want to use
-          // https://firebase.google.com/docs/web/setup#available-libraries
           // Your web app's Firebase configuration
           // For Firebase JS SDK v7.20.0 and later, measurementId is optional
           const firebaseConfig = {
@@ -91,8 +89,7 @@
           const app = !firebase.apps.length
             ? firebase.initializeApp(firebaseConfig)
             : firebase.app();
-          
-          // const analytics = firebase.getAnalytics(app);
+          firebase.analytics(app);
 
           const features = [
             'auth', 
@@ -105,12 +102,15 @@
             'remoteConfig',
             'performance',
           ].filter(feature => typeof app[feature] === 'function');
-          console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+          console.log(`Firebase SDK loaded with: ${features}`);
         } catch (e) {
           console.log('Error loading the Firebase SDK, check the console.');
           console.error(e);
         }
       });
+
     </script>
+
+    <script src="main.dart.js" type="application/javascript"></script>
   </body>
 </html>
