@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_seed/crashlytics_utils.dart';
+import 'package:flutter_seed/performance_utils.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'firebase_options.dart';
 
@@ -72,10 +73,25 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text("Test crashlytics, only for mobile"),
-            TextButton(
-              onPressed: () => reportCrashlyticsError(),
+            // CRASHLYTICS
+            const Text(
+                "Test crashlytics, raise issue pressing the button. Only for mobile"),
+            ElevatedButton(
               child: const Text('Throw error'),
+              onPressed: () => reportCrashlyticsError(),
+            ),
+            // FIREBASE - PERFORMANCE
+            const Text(
+                "Test performance, try to navigate repititvly. Only for mobile"),
+            ElevatedButton(
+              child: const Text('Navigate'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PerformanceRoute()),
+                );
+              },
             ),
           ],
         ),
