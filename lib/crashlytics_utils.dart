@@ -26,9 +26,7 @@ void reportCrashlyticsError() {
     FirebaseCrashlytics.instance.setCustomKey('level', 'dev');
     FirebaseCrashlytics.instance.setUserIdentifier('1a2b3c5d5e');
 
-    throw Exception('Crashlytics is bind with tags');
-  } else {
-    return debugPrint("Crashlytics is not activate on web and desktop app");
+    throw Exception('Custom error with tags');
   }
 }
 
