@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ios",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "macos"
+        },
+        {
+            "name": "ios-tablet",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": ""
+        },
+        {
+            "name": "ios-mobile",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "2368D0AD-A1A6-436D-AD26-75710DC66A88"
+        },
+        {
+            "name": "web",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "chrome"
+        },
+        {
+            "name": "android-phone",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": ""
+        },
+        {
+            "name": "android-tablet",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": ""
+        },
+    ],
+}
