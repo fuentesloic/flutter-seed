@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '605953345089',
     projectId: 'flutter-seeder',
     storageBucket: 'flutter-seeder.appspot.com',
-    iosClientId: '605953345089-scldlgs4fahbt9g5sfcriv5vbi5v1582.apps.googleusercontent.com',
+    iosClientId:
+        '605953345089-scldlgs4fahbt9g5sfcriv5vbi5v1582.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterSeed',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '605953345089',
     projectId: 'flutter-seeder',
     storageBucket: 'flutter-seeder.appspot.com',
-    iosClientId: '605953345089-scldlgs4fahbt9g5sfcriv5vbi5v1582.apps.googleusercontent.com',
+    iosClientId:
+        '605953345089-scldlgs4fahbt9g5sfcriv5vbi5v1582.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterSeed',
   );
 }
