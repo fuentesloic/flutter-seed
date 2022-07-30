@@ -18,7 +18,6 @@ class AuthService {
   // User State
   Stream<User?> authStateChanges() {
     FirebaseAuth _firebaseInstance = FirebaseAuth.instance;
-    print(_firebaseInstance);
     return _firebaseInstance.userChanges();
   }
 
