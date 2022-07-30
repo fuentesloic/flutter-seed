@@ -18,8 +18,8 @@ You can serve locally your future build: `firebase serve --only hosting`
 
 ## Install Firebase suite
 
-- Firebase suite
 - Firebase crashlytics (excluding web/desktop)
 - Firebase performance (excluding web/desktop)
+- Firebase authentication
 
 Dashboard: https://console.firebase.google.com/project/flutter-seeder/overview
